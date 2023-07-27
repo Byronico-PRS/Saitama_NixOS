@@ -1,2 +1,3 @@
 # Saitama_NixOS
-Simples e funcional ambiente para trabalho com produção musical.
+Ambiente de trabalho simples e funcional para produção musical.
+XFCE
