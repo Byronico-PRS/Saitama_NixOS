@@ -8,3 +8,5 @@ Arquivos de configuração na pasta system (atenção ao hardware.nix pois esse 
 arquivos do home manager na pasta users
 Scripts para atualizar com esses arquvos na pasta Scripts.
 Colo esses arquivos em um diretório criado ~/.dotfiles e é sucesso
+
+Existe a ideia de melhorar tudo isso, mas vamso devagar, quero usar o awesomewm como fazia no arch, usar flakes para ter uma configuração masi fácil e tematizar ainda mais.
