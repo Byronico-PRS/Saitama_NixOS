@@ -12,7 +12,30 @@
     ./pkgs.nix
    # My config audio file     
     ./audio.nix
+  # Choose your DE
+     # Plasma KDE
+      # ./kde.nix
+     # GNOME DE (aidna nao funciona da pau com o pipewire)
+      # ./gnome.nix
+     # XFCE DE
+      # ./xfce.nix
+     # Awesome WM
+      ./awesome.nix 
+   
+   # Steam and game configs
+      ./steam.nix 
+   
+   # My nvidia graphics config 
+      #./nvidia-dell.nix is not working
+
+    # Musnix realtime audio setup
+    ./musnix/default.nix
   ];
+
+   # Enabling Musnix
+   
+  musnix.enable = true;
+
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -27,7 +50,10 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+    networking.networkmanager.enable = true;
+  
+  # Enable Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   # Enable flatpak
   xdg.portal.enable = true;
@@ -69,10 +95,6 @@
     };
   };
 
-  services.xserver.desktopManager = { 
-    xfce.enable = true;
-    wallpaper.mode = "scale";
-  };
   # Configure keymap in X11
   services.xserver = {
     layout = "br";
@@ -95,7 +117,6 @@
 
   # Enable ntfs file system (to open pen drives in ntfs)
   boot.supportedFilesystems = [ "ntfs" ];
-
  
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -117,8 +138,14 @@
     ]; 
   };
   
+  #Enable auto upgrade nixos
+
+   system.autoUpgrade.enable = true;
+   system.autoUpgrade.allowReboot = true;
+  
   # Enable xconf.settings in home-manager, to set the xfce desktop
   programs.xfconf.enable = true;
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -154,7 +181,16 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
+  # Enable KDE Connect
+   networking.firewall = { 
+    enable = true;
+    allowedTCPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+    allowedUDPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

@@ -24,7 +24,6 @@
   vim
   htop
   btop
-  neofetch
   ffmpeg
   unzip
   p7zip
@@ -44,16 +43,18 @@
   soundfont-ydp-grand
 # Internet
   firefox #browser
-  brave #browser
+  #brave #browser
   thunderbird #mail-client
 # Escritorio
   libreoffice #office suite
-  okular #pdf reade
+  #okular #pdf reade #versao flatpak parece funcionar melhor no awesomewm
   vscodium #text editor
   direnv
   git
   unetbootin #live usb creator
   nextcloud-client #cloud files
+  gnome.zenity
+  usbutils
 # Audio
   musescore #editor de partitura
   reaper #daw essa versao provoca dificuldades de configuração com o reapck e outros plugins do js
@@ -65,6 +66,7 @@
   guitarix # guitar amps
   gxplugins-lv2 #guitar plugin
   calf #plugin suite
+  tonelib-metal #guitaramp
 # Video
   obs-studio #rec_screen vide_studio
   vlc #video player
@@ -77,9 +79,13 @@
   carla
   yabridge
   yabridgectl
+# Impressora
+  gnomeExtensions.alternate-menu-for-hplip2
+  hplipWithPlugin
 # imagens
   gimp
   inkscape 
-            
+#games
+  scid         
   ];
   }
